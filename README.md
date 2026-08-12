@@ -17,6 +17,20 @@ cp .env.example .env        # add your ANTHROPIC_API_KEY
 python lauch.py
 ```
 
+## Chat UI (Django)
+
+The same Q&A, but as a web page instead of a script:
+
+```bash
+python manage.py migrate
+python manage.py runserver
+```
+
+Then open http://localhost:8000.
+
+New to Django? [DJANGO_GUIDE.md](DJANGO_GUIDE.md) walks through every file in
+this project and follows one click from the browser to the database and back.
+
 ## Why no embeddings here
 
 The sample data is 50 rows (~945 tokens), about 0.5% of the context window. At

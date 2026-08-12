@@ -1,3 +1,4 @@
+django
 langchain-core
 langchain-community
 langchain-anthropic
