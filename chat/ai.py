@@ -9,6 +9,12 @@ from functools import lru_cache
 from langchain_anthropic import ChatAnthropic
 from langchain_community.document_loaders import CSVLoader
 from langchain_core.prompts import PromptTemplate
+import os
+
+# If there's no LangSmith key, turn tracing off instead of letting every
+# request fail. Monitoring should never break the app.
+if not os.environ.get("LANGSMITH_API_KEY"):
+    os.environ["LANGSMITH_TRACING"] = "false"
 
 from docs.employee_data import employees
 
